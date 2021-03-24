@@ -1,22 +1,15 @@
 {
-  "name": "to-do-list",
+  "name": "todo",
   "version": "1.0.0",
-  "description": "Projet To Do List",
+  "description": "",
   "main": "./src/server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/server.js",
-    "watch": "nodemon ./src/server/js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Floris75/To-Do-List.git"
+    "watch": "nodemon ./src/server.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Floris75/To-Do-List/issues"
-  },
-  "homepage": "https://github.com/Floris75/To-Do-List#readme",
   "devDependencies": {
     "nodemon": "^2.0.7"
   },
