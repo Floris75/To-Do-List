@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+table {
+    width: 50%;    
+}
+
+#task_list thead {
+    border: 2px solid black;
+    display: block;
+}
+
+#task_list th {
+    display: block;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 5px 10px;
+}
+
+#task_list thead > tr:first-child {
+    border-bottom: 1px solid black ;
+}
+
+#task_list thead tr:last-child th:first-child {
+    border-right: 1px solid black;
+    width: 20%;
+}
+
+#task_list thead tr:last-child th:nth-child(2) {
+    width: 40%;
+}
+
+#task_list thead tr:last-child th:nth-child(3) {
+    border-left: 1px solid black;
+    width: 20%;
+}
+
+#task_list thead tr:last-child th:last-child {
+    border-left: 1px solid black;
+    width: 20%;
+}
+
+#task_list tr {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+#task_list tbody tr td:first-child {
+    border-right: 1px solid black;
+    width: 20%;
+}
+
+#task_list tbody tr td:nth-child(2) {
+    width: 40%;
+}
+
+#task_list tbody tr td:nth-child(3) {
+    border-left: 1px solid black;
+    width: 20%;
+}
+
+#task_list tbody tr td:last-child {
+    border-left: 1px solid black;
+    width: 20%;
+}

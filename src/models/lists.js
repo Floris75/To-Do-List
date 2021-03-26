@@ -13,6 +13,7 @@ exports.getAll = (callback) => {
 }
 
 exports.getOne = (id, callback) => {
+  console.log(id);
     db.query(`SELECT * FROM task_lists INNER JOIN tasks ON task_lists.id = tasks.task_list_id Where task_lists.id = ${id};`, (error, result) => {
       if (error) {
         console.log("error: ", error);

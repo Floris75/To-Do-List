@@ -18,6 +18,8 @@ exports.findOne = (request, response) => {
       if (error) {
         response.send(error.message);
       }
+      console.log(tasks);
+
       response.render("task_list.ejs", { tasks });
     });
   }

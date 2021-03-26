@@ -8,25 +8,50 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1> <%= task.description %></h1>
-    <form action=" <%= `/task/${task.id}/description_update` %> " method="post">
-        <label for="description">Modifier la description de la tâche</label>
-        <input type="text" name="description" maxlength="500">
-        <input type="submit" value="Modifier">
-    </form>
-
-    <h2> Terminé : <% if (task.done) {%> oui <%} 
-        else { %> non <% }%> </h2>
-    <form action=" <%= `/task/${task.id}/done_update` %> " method="post">
-        <% if (task.done) { %>
-            <input type="submit" value="Pas Terminer"> 
-        <%}
-        else { %>
-            <input type="submit" value="Terminer"> 
-        <% } %>
-    </form>
-
-    <h3> Date de création : <%= task.date %></h3>
+    <table id="task">
+        <thead>
+            <tr>
+                <th colspan="2">
+                    <%= task.description %>
+                </th>
+            </tr>
+            <tr>
+                <form action=" <%= `/task/${task.id}/description_update` %> " method="post">
+                    <th>
+                        <label for="description">Modifier la description de la tâche</label>
+                        <br>
+                        <input type="text" name="description" maxlength="500">
+                    </th>
+                    <th>
+                        <input type="submit" value="Modifier">
+                    </th>
+                </form>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Terminé : <% if (task.done) {%> oui <%} 
+                    else { %> non <% }%> 
+                </td>
+                <td>
+                    <form action=" <%= `/task/${task.id}/done_update` %> " method="post">
+                        <% if (task.done) { %>
+                            <input type="submit" value="Pas Terminer"> 
+                            <%}
+                            else { %>
+                             <input type="submit" value="Terminer"> 
+                        <% } %>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td> Date de création : </td>
+                <td><%= task.date %></td>
+            </tr>
+        </tbody>
+    </table>
+    
 
 
 </body>
