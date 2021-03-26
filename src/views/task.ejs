@@ -5,12 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1> <%= task[0].description %></h1>
-    <h2> Terminé : <% if (task[0].done) {%> oui <%} 
-        else { %> non <% }%></h2>
-    <h3> Date de création : <%= task[0].date %></h3>
+    <h1> <%= task.description %></h1>
+    <form action=" <%= `/task/${task.id}/description_update` %> " method="post">
+        <label for="description">Modifier la description de la tâche</label>
+        <input type="text" name="description" maxlength="500">
+        <input type="submit" value="Modifier">
+    </form>
+
+    <h2> Terminé : <% if (task.done) {%> oui <%} 
+        else { %> non <% }%> </h2>
+    <form action=" <%= `/task/${task.id}/done_update` %> " method="post">
+        <% if (task.done) { %>
+            <input type="submit" value="Pas Terminer"> 
+        <%}
+        else { %>
+            <input type="submit" value="Terminer"> 
+        <% } %>
+    </form>
+
+    <h3> Date de création : <%= task.date %></h3>
 
 
 </body>
